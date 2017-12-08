@@ -1,2 +1,2 @@
 # soapwithntlm
-Sample Java application to use BTLM authentication with SOAP
+Sample Java application to use NTLM authentication with SOAP
