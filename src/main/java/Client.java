@@ -39,11 +39,7 @@ public class Client {
             post.setHeader("Content-type", "text/xml; charset=utf-8");
             post.setHeader("SOAPAction", ""); //Provide Soap action
 
-            for (Header header : post.getAllHeaders()) {
-                System.out.println(header.getName() + " : " + header.getValue());
-            }
             org.apache.http.HttpResponse response = client.execute(post);
-
 
             HttpEntity responseEntity = response.getEntity();
 

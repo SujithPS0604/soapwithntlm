@@ -1,7 +1,7 @@
 # SOAP with NTLM
 Sample Java application to use NTLM authentication with SOAP
 
-# NTLM
+## NTLM
 
 NTLM credentials are based on data obtained during the interactive logon process and consist of a domain name, a user name, and a one-way hash of the user's password. 
 
@@ -16,7 +16,7 @@ Noninteractive authentication, which may be required to permit an already logged
 	- a server, 
 	- a domain controller that does the authentication calculations on behalf of the server.
 
-# Working of NTLM
+## Working of NTLM
 
 The following steps present an outline of NTLM non-interactive authentication. 
 
@@ -45,7 +45,7 @@ The first step provides the user's NTLM credentials and occurs only as part of t
 Your application should not access the NTLM security package directly; instead, it should use the Negotiate security package. Negotiate allows your application to take advantage of more advanced security protocols if they are supported by the systems involved in the authentication. Currently, the Negotiate security package selects between Kerberos and NTLM. Negotiate selects Kerberos unless it cannot be used by one of the systems involved in the authentication.
 
 
-# A Sample Java Client
+## A Sample Java Client
 
 ```java
 
@@ -71,9 +71,6 @@ public static String invoke() {
             post.setHeader("Content-type", "text/xml; charset=utf-8");
             post.setHeader("SOAPAction", ""); //Provide Soap action
 
-            for (Header header : post.getAllHeaders()) {
-                System.out.println(header.getName() + " : " + header.getValue());
-            }
             org.apache.http.HttpResponse response = client.execute(post);
 
 
